@@ -3,6 +3,9 @@ package org.example;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class PerfController {
 
@@ -11,6 +14,7 @@ public class PerfController {
 
     @FXML
     private ListView<String> chatList;
+    private Stage stage;
 
     @FXML
     public void sendTxtToChatList(){
@@ -29,5 +33,10 @@ public class PerfController {
     @FXML
     public void exitApp(){
         System.exit(1);
+    }
+
+    @FXML
+    public void about() throws IOException {
+        App.windowAbout(new Stage());
     }
 }

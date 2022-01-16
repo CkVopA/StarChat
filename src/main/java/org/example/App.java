@@ -33,6 +33,14 @@ public class App extends Application {
         return fxmlLoader.load();
     }
 
+    static void windowAbout(Stage stageAbout) throws IOException {
+        Scene sceneAbout = new Scene(loadFXML("aboutWindow"));
+        stageAbout.setScene(sceneAbout);
+        stageAbout.setTitle("About APP");
+        stageAbout.centerOnScreen();
+        stageAbout.show();
+    }
+
     public static void main(String[] args) {
         launch();
     }
