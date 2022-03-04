@@ -53,6 +53,6 @@
          </padding></ListView>
       <Label alignment="CENTER" layoutX="119.0" layoutY="29.0" prefHeight="18.0" prefWidth="246.0" text="Чат" />
       <Label alignment="CENTER" layoutX="3.0" layoutY="29.0" prefHeight="18.0" prefWidth="114.0" text="Контакты" />
-      <TextArea fx:id="chatList" layoutX="119.0" layoutY="49.0" prefHeight="313.0" prefWidth="245.0" AnchorPane.leftAnchor="119.0" AnchorPane.rightAnchor="2.0" />
+      <TextArea fx:id="chatList" editable="false" layoutX="119.0" layoutY="49.0" prefHeight="313.0" prefWidth="245.0" wrapText="true" AnchorPane.leftAnchor="119.0" AnchorPane.rightAnchor="2.0" />
    </children>
 </AnchorPane>

@@ -9,6 +9,8 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class PerfController {
 
@@ -20,21 +22,31 @@ public class PerfController {
 
     @FXML
     private ListView<String> listContacts;
-@FXML
-    public ListView<String> getListContacts() {
-        return listContacts;
-    }
 
-    ObservableList<String> contacts = FXCollections.observableArrayList(
-            "Senior","Middle","Junior");
+    private final ObservableList<String> contacts = FXCollections.observableArrayList(
+ //           "Senior","Middle","Junior"
+    );
     @FXML
     void initialize (){
-    listContacts.setItems(contacts);
+ //   listContacts.setItems(contacts);
     }
 
     @FXML
     public void openWindowAddContact() throws IOException {
         App.windowAddNewCont(new Stage());
+    }
+
+    @FXML
+    private TextField fieldNewContact;
+
+    @FXML
+    public void addNewContact(){
+        String nickname = fieldNewContact.getText();
+        if (!nickname.isBlank()){
+            contacts.add(nickname);
+            listContacts.setItems(contacts.sorted());
+        }
+        fieldNewContact.clear();
     }
 
     @FXML
