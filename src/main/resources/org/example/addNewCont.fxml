@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="198.0" prefWidth="386.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ControllerAddNewCont">
+   <center>
+      <TextField fx:id="fieldNewContact" prefHeight="51.0" prefWidth="287.0" promptText="никнейм" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="17.0" />
+         </font>
+         <BorderPane.margin>
+            <Insets left="2.0" right="2.0" />
+         </BorderPane.margin>
+         <padding>
+            <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+         </padding>
+      </TextField>
+   </center>
+   <right>
+      <Button fx:id="buttonAddContact" mnemonicParsing="false" onAction="#addNewContact" prefHeight="51.0" prefWidth="90.0" text="Добавить" textAlignment="CENTER" textFill="#224cd4" textOverrun="LEADING_ELLIPSIS" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets right="2.0" />
+         </BorderPane.margin>
+      </Button>
+   </right>
+   <top>
+      <Label prefHeight="74.0" prefWidth="370.0" text="Введите имя нового контакта:" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+         </BorderPane.margin>
+         <padding>
+            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+         </padding>
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+   </top>
+</BorderPane>

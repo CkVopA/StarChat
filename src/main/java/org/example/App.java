@@ -44,6 +44,14 @@ public class App extends Application {
         stageAbout.show();
     }
 
+    static void windowAddNewCont(Stage stAddCont) throws IOException {
+        Scene sceneAddCont = new Scene(loadFXML("addNewCont"));
+        stAddCont.setScene(sceneAddCont);
+        stAddCont.setResizable(false);
+        stAddCont.setTitle("Добавление нового контакта");
+        stAddCont.show();
+    }
+
     public static void main(String[] args) {
         launch();
     }

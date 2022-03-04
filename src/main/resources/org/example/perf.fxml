@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
@@ -13,9 +15,9 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="405.0" prefWidth="366.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.PerfController">
    <children>
-      <HBox layoutX="119.0" layoutY="363.0" prefHeight="38.0" prefWidth="246.0">
+      <HBox layoutX="119.0" layoutY="363.0" prefHeight="38.0" prefWidth="246.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="119.0" AnchorPane.rightAnchor="2.0">
          <children>
-            <TextField fx:id="inputField" onAction="#sendTxtToChatList" prefHeight="42.0" prefWidth="199.0" />
+            <TextField fx:id="inputField" onAction="#sendTxtToChatList" prefHeight="42.0" prefWidth="199.0" promptText="текст сообщения" />
             <Button mnemonicParsing="false" onAction="#sendTxtToChatList" prefHeight="38.0" prefWidth="48.0" text="Отправить">
                <font>
                   <Font size="7.0" />
@@ -32,6 +34,7 @@
           <Menu mnemonicParsing="false" text="Инструменты">
             <items>
               <MenuItem mnemonicParsing="false" onAction="#clearChatList" text="Очистить историю переписки" />
+                  <MenuItem mnemonicParsing="false" onAction="#openWindowAddContact" text=" Добавить новый контвкт" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Помощь">
@@ -41,9 +44,15 @@
           </Menu>
         </menus>
       </MenuBar>
-      <ListView fx:id="chatList" layoutX="119.0" layoutY="48.0" prefHeight="314.0" prefWidth="246.0" />
-      <ListView layoutX="3.0" layoutY="48.0" prefHeight="353.0" prefWidth="114.0" />
+      <ListView fx:id="listContacts" blendMode="DARKEN" layoutX="3.0" layoutY="48.0" prefHeight="354.0" prefWidth="114.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0">
+         <opaqueInsets>
+            <Insets bottom="1.0" top="1.0" />
+         </opaqueInsets>
+         <padding>
+            <Insets bottom="1.0" left="3.0" top="1.0" />
+         </padding></ListView>
       <Label alignment="CENTER" layoutX="119.0" layoutY="29.0" prefHeight="18.0" prefWidth="246.0" text="Чат" />
       <Label alignment="CENTER" layoutX="3.0" layoutY="29.0" prefHeight="18.0" prefWidth="114.0" text="Контакты" />
+      <TextArea fx:id="chatList" layoutX="119.0" layoutY="49.0" prefHeight="313.0" prefWidth="245.0" AnchorPane.leftAnchor="119.0" AnchorPane.rightAnchor="2.0" />
    </children>
 </AnchorPane>
