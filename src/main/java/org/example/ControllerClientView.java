@@ -9,10 +9,8 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
-public class PerfController {
+public class ControllerClientView {
 
     @FXML
     private TextField inputField;
@@ -33,7 +31,7 @@ public class PerfController {
 
     @FXML
     public void openWindowAddContact() throws IOException {
-        App.windowAddNewCont(new Stage());
+        ClientStart.windowAddNewCont(new Stage());
     }
 
     @FXML
@@ -70,6 +68,6 @@ public class PerfController {
 
     @FXML
     public void about() throws IOException {
-        App.windowAbout(new Stage());
+        ClientStart.windowAbout(new Stage());
     }
 }

@@ -1,11 +1,9 @@
 package org.example;
 
 import javafx.application.Application;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -13,13 +11,13 @@ import java.io.IOException;
 /**
  * JavaFX App
  */
-public class App extends Application {
+public class ClientStart extends Application {
 
     private static Scene scene;
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("perf"));
+        scene = new Scene(loadFXML("clientView"));
         stage.setScene(scene);
         stage.setTitle("StarChat");
         stage.centerOnScreen();
@@ -32,7 +30,7 @@ public class App extends Application {
     }
 
     private static Parent loadFXML(String fxml) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(ClientStart.class.getResource(fxml + ".fxml"));
         return fxmlLoader.load();
     }
 
