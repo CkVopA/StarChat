@@ -17,7 +17,10 @@
    <children>
       <HBox layoutX="119.0" layoutY="363.0" prefHeight="38.0" prefWidth="246.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="119.0" AnchorPane.rightAnchor="2.0">
          <children>
-            <TextField fx:id="inputField" onAction="#sendTxtToChatList" prefHeight="42.0" prefWidth="199.0" promptText="текст сообщения" />
+            <TextField fx:id="inputField" onAction="#sendTxtToChatList" prefHeight="42.0" prefWidth="199.0" promptText="Текст сообщения">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font></TextField>
             <Button mnemonicParsing="false" onAction="#sendTxtToChatList" prefHeight="38.0" prefWidth="48.0" text="Отправить">
                <font>
                   <Font size="7.0" />
@@ -34,7 +37,7 @@
           <Menu mnemonicParsing="false" text="Инструменты">
             <items>
               <MenuItem mnemonicParsing="false" onAction="#clearChatList" text="Очистить историю переписки" />
-                  <MenuItem mnemonicParsing="false" onAction="#openWindowAddContact" text=" Добавить новый контвкт" />
+                  <MenuItem mnemonicParsing="false" onAction="#openWindowAddContact" text=" Добавить новый контакт" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Помощь">
@@ -51,8 +54,14 @@
          <padding>
             <Insets bottom="1.0" left="3.0" top="1.0" />
          </padding></ListView>
-      <Label alignment="CENTER" layoutX="119.0" layoutY="29.0" prefHeight="18.0" prefWidth="246.0" text="Чат" />
-      <Label alignment="CENTER" layoutX="3.0" layoutY="29.0" prefHeight="18.0" prefWidth="114.0" text="Контакты" />
-      <TextArea fx:id="chatList" editable="false" layoutX="119.0" layoutY="49.0" prefHeight="313.0" prefWidth="245.0" wrapText="true" AnchorPane.leftAnchor="119.0" AnchorPane.rightAnchor="2.0" />
+      <Label alignment="CENTER" layoutX="119.0" layoutY="29.0" prefHeight="18.0" prefWidth="246.0" text="Чат">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label alignment="CENTER" layoutX="3.0" layoutY="29.0" prefHeight="18.0" prefWidth="114.0" text="Контакты">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <TextArea fx:id="chatList" editable="false" focusTraversable="false" layoutX="119.0" layoutY="49.0" prefHeight="313.0" prefWidth="245.0" wrapText="true" AnchorPane.leftAnchor="119.0" AnchorPane.rightAnchor="2.0" />
    </children>
 </AnchorPane>
