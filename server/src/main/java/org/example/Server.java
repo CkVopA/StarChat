@@ -19,11 +19,20 @@ public class Server {
             DataOutputStream out = new DataOutputStream(socket.getOutputStream());
             System.out.println("Client is online!");
 
-            while (true){
-                String msg = in.readUTF();
-                System.out.println("Message from client: "+ msg);
-                out.writeUTF("ECHO: "+ msg);
-            }
+            Thread thread1 = new Thread(() -> {
+                try {
+                    while (true){
+                        String msg = in.readUTF();
+                        System.out.println("Message from client: "+ msg);
+                        out.writeUTF("ECHO: "+ msg + "\n");
+                    }
+                }
+                catch (IOException e){
+                    e.printStackTrace();
+                }
+            });
+            thread1.start();
+
         }
         catch (IOException e) {
             e.printStackTrace();
