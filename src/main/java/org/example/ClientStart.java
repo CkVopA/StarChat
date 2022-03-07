@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.example.models.Network;
 
 import java.io.IOException;
 
@@ -23,6 +24,9 @@ public class ClientStart extends Application {
         stage.centerOnScreen();
         stage.setResizable(false);
         stage.show();
+
+        Network network = new Network();
+        network.connect();
     }
 
     static void setRoot(String fxml) throws IOException {
@@ -34,7 +38,7 @@ public class ClientStart extends Application {
         return fxmlLoader.load();
     }
 
-    static void windowAbout(Stage stageAbout) throws IOException {
+    public static void windowAbout(Stage stageAbout) throws IOException {
         Scene sceneAbout = new Scene(loadFXML("aboutWindow"));
         stageAbout.setScene(sceneAbout);
         stageAbout.setTitle("About APP");
@@ -42,7 +46,7 @@ public class ClientStart extends Application {
         stageAbout.show();
     }
 
-    static void windowAddNewCont(Stage stAddCont) throws IOException {
+    public static void windowAddNewCont(Stage stAddCont) throws IOException {
         Scene sceneAddCont = new Scene(loadFXML("addNewCont"));
         stAddCont.setScene(sceneAddCont);
         stAddCont.setResizable(false);

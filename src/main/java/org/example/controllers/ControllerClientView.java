@@ -1,4 +1,4 @@
-package org.example;
+package org.example.controllers;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -8,6 +8,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import org.example.ClientStart;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -18,11 +19,7 @@ import java.util.ResourceBundle;
 
 public class ControllerClientView implements Initializable {
 
-    private final String HOST = "localhost";
-    private final int SERVER_PORT = 8180;
 
-    private DataInputStream in;
-    private DataOutputStream out;
 
     @FXML
     private TextField inputField;
@@ -65,13 +62,12 @@ public class ControllerClientView implements Initializable {
     }
 
     private void appendMessage(String msg) {
-        try {
-
-            out.writeUTF(msg);
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
+ //       try {
+ //           out.writeUTF(msg);
+ //       }
+ //       catch (IOException e) {
+ //           e.printStackTrace();
+ //       }
         chatList.appendText(msg + "\n");
     }
 
@@ -94,27 +90,6 @@ public class ControllerClientView implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         listContacts.setItems(contacts);
 
-        try {
-            Socket socketClient = new Socket(HOST, SERVER_PORT);
-            in = new DataInputStream(socketClient.getInputStream());
-            out = new DataOutputStream(socketClient.getOutputStream());
 
-            Thread thread1 = new Thread(()->{
-               while (true){
-                   try {
-                       String msg = in.readUTF();
-                       if (!msg.isBlank()){
-                           chatList.appendText(msg);
-                       }
-                   }
-                   catch (IOException e){
-                       e.printStackTrace();
-                   }
-               }
-            });
-            thread1.start();
-        } catch (IOException e) {
-            throw new RuntimeException("Lost connection to server!");
-        }
     }
 }
