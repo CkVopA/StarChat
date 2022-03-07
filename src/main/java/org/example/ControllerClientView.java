@@ -3,14 +3,17 @@ package org.example;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class ControllerClientView {
+public class ControllerClientView implements Initializable {
 
     @FXML
     private TextField inputField;
@@ -22,7 +25,7 @@ public class ControllerClientView {
     private ListView<String> listContacts;
 
     private final ObservableList<String> contacts = FXCollections.observableArrayList(
- //           "Senior","Middle","Junior"
+            "Senior","Middle","Junior"
     );
     @FXML
     void initialize (){
@@ -69,5 +72,10 @@ public class ControllerClientView {
     @FXML
     public void about() throws IOException {
         ClientStart.windowAbout(new Stage());
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        listContacts.setItems(contacts);
     }
 }
